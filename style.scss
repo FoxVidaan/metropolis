@@ -1,0 +1,159 @@
+@font-face {
+  font-family: 'kanit';
+  src: url("assets/fonts/kanit-bold.woff") format('woff'), url("assets/fonts/kanit-bold.woff2") format('woff2'),
+  url("assets/fonts/kanit-semibold.woff") format('woff'), url("assets/fonts/kanit-semibold.woff2") format('woff2');
+}
+
+/** variables **/
+$bg-color: black;
+$text-color: white;
+
+/** globals **/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: $text-color;
+  fill: $text-color;
+}
+
+body {
+  background-color: $bg-color;
+  font-family: 'kanit', sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 1vw;
+  overflow: hidden;
+}
+
+ul {
+  list-style: none;
+}
+
+/** navbar **/
+nav {
+  opacity: 0;
+  position: relative;
+  font-family: Helvetica, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1vh 0;
+  animation: navbar-animation 1s 0.3s both;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+
+  &:first-child {
+    gap: 1rem;
+  }
+
+  &:last-child {
+    gap: 0.4rem;
+  }
+}
+
+nav ul li {
+  font-weight: 400;
+}
+
+nav .brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@keyframes navbar-animation {
+  from {
+    transform: translateY(-20%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/** hero **/
+.hero {
+  position: relative;
+  text-align: center;
+  min-height: content-box;
+  overflow: hidden;
+  margin: 2vw 0;
+}
+
+.hero h1 {
+  position: relative;
+  top: -100%;
+  font-size: calc(7000vw / 1018);
+  animation: title-animation 0.5s both;
+
+  &:first-child {
+    animation-delay: 0.3s;
+  }
+
+  &:last-child {
+    margin-top: -1rem;
+    color: transparent;
+    background-color: transparent;
+    animation-delay: 0.5s;
+    -webkit-text-stroke: calc(300vw / 1018) #fff;
+  }
+}
+
+@keyframes title-animation {
+  from {
+    top: 100%;
+  }
+  to {
+    top: 0;
+  }
+}
+
+/** section images **/
+.images {
+  flex: 1;
+  display: flex;
+  gap: 0.4rem;
+}
+
+.images div {
+  position: relative;
+  flex: 1;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: black;
+    animation: image-animation 0.6s both;
+  }
+
+  &:nth-child(1)::after {
+    animation-delay: 0.8s;
+  }
+
+  &:nth-child(2)::after {
+    animation-delay: 1s;
+  }
+
+  &:nth-child(3)::after {
+    animation-delay: 1.2s;
+  }
+}
+
+@keyframes image-animation {
+  from {
+    height: 100%;
+  }
+  to {
+    height: 0;
+  }
+}
