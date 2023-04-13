@@ -1,0 +1,155 @@
+@font-face {
+  font-family: kanit;
+  src: url("kanit-bold.c28063eb.woff") format("woff"), url("kanit-bold.f09f495c.woff2") format("woff2"), url("kanit-semibold.9fcf4e93.woff") format("woff"), url("kanit-semibold.a1fad611.woff2") format("woff2");
+}
+
+* {
+  box-sizing: border-box;
+  color: #fff;
+  fill: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  background-color: #000;
+  flex-direction: column;
+  padding: 1vw;
+  font-family: kanit, sans-serif;
+  display: flex;
+  overflow: hidden;
+}
+
+ul {
+  list-style: none;
+}
+
+nav {
+  opacity: 0;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1vh 0;
+  font-family: Helvetica, sans-serif;
+  animation: 1s .3s both navbar-animation;
+  display: flex;
+  position: relative;
+}
+
+nav ul {
+  align-items: center;
+  display: flex;
+}
+
+nav ul:first-child {
+  gap: 1rem;
+}
+
+nav ul:last-child {
+  gap: .4rem;
+}
+
+nav ul li {
+  font-weight: 400;
+}
+
+nav .brand {
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+}
+
+@keyframes navbar-animation {
+  from {
+    opacity: 0;
+    transform: translateY(-20%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero {
+  text-align: center;
+  min-height: content-box;
+  margin: 2vw 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero h1 {
+  font-size: 6.87623vw;
+  animation: .5s both title-animation;
+  position: relative;
+  top: -100%;
+}
+
+.hero h1:first-child {
+  animation-delay: .3s;
+}
+
+.hero h1:last-child {
+  color: #0000;
+  -webkit-text-stroke: .294695vw #fff;
+  background-color: #0000;
+  margin-top: -1rem;
+  animation-delay: .5s;
+}
+
+@keyframes title-animation {
+  from {
+    top: 100%;
+  }
+
+  to {
+    top: 0;
+  }
+}
+
+.images {
+  flex: 1;
+  gap: .4rem;
+  display: flex;
+}
+
+.images div {
+  background-repeat: no-repeat;
+  background-size: cover;
+  flex: 1;
+  position: relative;
+}
+
+.images div:after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  background: #000;
+  animation: .6s both image-animation;
+  position: absolute;
+}
+
+.images div:nth-child(1):after {
+  animation-delay: .8s;
+}
+
+.images div:nth-child(2):after {
+  animation-delay: 1s;
+}
+
+.images div:nth-child(3):after {
+  animation-delay: 1.2s;
+}
+
+@keyframes image-animation {
+  from {
+    height: 100%;
+  }
+
+  to {
+    height: 0;
+  }
+}
+
+/*# sourceMappingURL=index.8353e49f.css.map */
